@@ -146,7 +146,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 long deleteId = list.get(position).getId();
-                noteDao.deleteByKey(deleteId);
+                //noteDao.deleteByKey(deleteId);
+                /*query = noteDao.queryBuilder()
+                        .where(NoteDao.Properties.Text.eq("测试2"))
+                        .build();
+                noteDao.deleteInTx(query.list());*/
                 list.remove(position);
                 mAdapter.notifyDataSetChanged();
             }
